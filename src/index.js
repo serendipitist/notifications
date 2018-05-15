@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import style from "./Search.css"
+import style from "./Search.css";
+import App from './app.js';
+import socketIOClient from 'socket.io-client';
 
-const Index = () => {
-  return <div>hello</div>;
-};
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+
+ReactDOM.render(<App />, document.getElementById("index"));
