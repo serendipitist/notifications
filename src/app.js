@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
+import Header from "./components/header";
+import NotificationSummary from "./components/notification_summary";
+import MessageBar from "./components/messagebar";
 
 class App extends Component {
   constructor() {
@@ -8,12 +11,15 @@ class App extends Component {
       endpoint: "http://localhost:4001",
       
       ///
-      color: 'white'
+      color: 'mef'
       ///
       
     };
+    this.handleChange = this.handleChange.bind(this);
   }
-
+  handleChange(event) {
+    this.setState({color: event.target.color});
+  }
   // sending sockets
   send() {
     const socket = socketIOClient(this.state.endpoint);
@@ -28,27 +34,20 @@ setColor(color){
   }  
   
   ///
-olColor(){
-  return <p>Hello</p>;
-}
 
   render() {
     // testing for socket connections
     const socket = socketIOClient(this.state.endpoint);
     socket.on('change color', (col) => {
-      document.body.style.backgroundColor = col
+      console.log(col);
     })
 
     return (
+     
       <div style={{ textAlign: "center" }}>
-      {this.olColor}
-        <button onClick={() => this.send() }>Change Color</button>
-
-        // adding the two buttons, also, remove all of the comments in the JSX section.
-        <button id="blue" onClick={() => this.setColor('blue')}>Blue</button>
-        <button id="red" onClick={() => this.setColor('red')}>Red</button>
-        ///
-
+        <Header />
+        <NotificationSummary/>
+        <MessageBar />
       </div>
     )
   }

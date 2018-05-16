@@ -1,0 +1,75 @@
+//* header 
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  display: flex;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  flex-grow:1;
+  flex-direction: row;
+}
+.notification-icon {
+  font-size: 30px;
+  color: black;
+  padding: 0 1rem;
+}
+
+
+.notification-summary {
+ &__container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   flex-direction: column;
+   border-bottom: 1px solid  lightgray;
+ }
+
+ &__content:first-child {
+    width: inherit;
+    border-top: 3px solid gray;
+    border-bottom: 1px solid lightgray ;
+    padding: 1rem;
+}
+
+ &__time {
+  text-align: left;
+ }
+
+ &__items {
+   list-style: none;
+   padding: 0;
+ }
+
+ &__item {
+   font-size: 1.4rem;
+   font-weight: bold;
+   .total-messages {
+     color: blue;
+     padding: 10px;
+   }
+ }
+ &__myworkspace {
+   text-align: center;
+   font-size: 0.5rem;
+ }
+}
+
+i.close {
+  display: inline-block;
+  transform: rotate(130deg) translateY(-16px);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: grey;
+  padding-right: 3px;
+
+  &:hover {
+      color: #000;
+  }
+}
