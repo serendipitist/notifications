@@ -12,9 +12,9 @@ class NotificationSummary extends Component {
           <time className="notification-summary__time">{moment().format(" dddd MMM Do, YYYY")}</time>
         </div>
           <ul className="notification-summary__items">
-            <li className="notification-summary__item"><span className="total-messages">2</span>Message</li>
+            <li className="notification-summary__item"><span className="total-messages">2</span>type of the message</li>
           </ul>
-          <div className="notification-summary__myworkspace">My Workspace</div>
+          <div className="notification-summary__myworkspace">My Workspace ></div>
       </div>
     )
   }

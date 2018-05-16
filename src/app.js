@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
-import Header from "./components/header";
 import NotificationSummary from "./components/notification_summary";
 import MessageBar from "./components/messagebar";
+import Notification from "./components/notification";
 
 class App extends Component {
   constructor() {
@@ -11,15 +11,23 @@ class App extends Component {
       endpoint: "http://localhost:4001",
       
       ///
-      color: 'mef'
-      ///
+      color: 'mef',
+      active: true,
       
     };
     this.handleChange = this.handleChange.bind(this);
+    this. handleClick = this.handleClick.bind(this);
   }
   handleChange(event) {
     this.setState({color: event.target.color});
   }
+  
+  handleClick() {
+    this.setState({
+      active: !this.state.active
+    });
+  }
+
   // sending sockets
   send() {
     const socket = socketIOClient(this.state.endpoint);
@@ -44,10 +52,14 @@ setColor(color){
 
     return (
      
-      <div style={{ textAlign: "center" }}>
-        <Header />
-        <NotificationSummary/>
-        <MessageBar />
+      <div>
+        <div className="header">
+          <a href="#default" class="logo">Notification Demo</a>
+          <div className="header-right">
+             <button className="notification-icon" onClick={this.handleClick}>&#x1f514;</button>
+          </div>
+         </div>
+         {this.state.active && <Notification/>}
       </div>
     )
   }

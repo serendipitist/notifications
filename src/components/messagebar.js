@@ -5,21 +5,23 @@ class MessageBar extends Component {
   constructor() {
     super();
     this.state = {
-      closeIcon: false
+      closeIcon: true
     }
+    this.onClose = this.onClose.bind(this);
   }
-  onClick() {
-    this.setState({ closeIcon: false })
+  onClose() {
+    this.setState({ closeIcon: false });
   }
+
   render() {
     return (
-      <div className="message-bar">
-      <article className="message-bar__contnet">
-        <time className="message-bar__time"></time>
-        <i className='close' onClick={() => onClose()}>+</i>
-        <p className="message-bar__msg"></p>
-        <span>view task</span>
-      </article>      
+     <div className="message-bar">   
+      {this.state.closeIcon && <article className="message-bar__content">
+          <time className="message-bar__time">{moment().subtract(1, 'days').calendar()}</time>
+          <i className='close' onClick={this.onClose}>+</i>
+          <p className="message-bar__msg">Oliver has texted you about interview
+          <span className="view-task">view task</span></p>
+        </article>}
       </div>
     )
   }

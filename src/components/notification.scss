@@ -17,8 +17,16 @@
   font-size: 30px;
   color: black;
   padding: 0 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
 }
 
+.notification-continer {
+  wdth: 100%;
+  margin: 0.5rem;
+}
 
 .notification-summary {
  &__container {
@@ -56,20 +64,44 @@
  }
  &__myworkspace {
    text-align: center;
-   font-size: 0.5rem;
+   font-size: 1rem;
+   color: blue;
+   margin: 0.5rem;
  }
 }
 
 i.close {
   display: inline-block;
-  transform: rotate(130deg) translateY(-16px);
+  transform: rotate(134deg) translateY(8px);
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
   color: grey;
-  padding-right: 3px;
+  padding: 10px;
+  float: right;
 
   &:hover {
       color: #000;
+  }
+}
+
+.view-task {
+  display: inline;
+  padding: 0.5rem;
+  color: blue;
+}
+
+.message-bar{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  &__content {
+    border-bottom: 1px solid lightgray;
+    text-align: left;
+    padding: 1px;
+  }
+
+  &__time {
+    font-weight: bold;
   }
 }
