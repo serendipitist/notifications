@@ -14,14 +14,18 @@ class MessageBar extends Component {
   }
 
   render() {
+    const messages = this.props.messages;
+    const messageBody = messages.map((item) =>
+    <article className="message-bar__content" key={item.message}>
+        <time className="message-bar__time">{moment.unix(item.time).calendar()}</time>
+        <i className='close' onClick={this.onClose}>+</i>
+        <p className="message-bar__msg">{item.message}
+        <span className="view-task">view task ></span></p>
+    </article>
+  );
     return (
      <div className="message-bar">   
-      {this.state.closeIcon && <article className="message-bar__content">
-          <time className="message-bar__time">{moment().subtract(1, 'days').calendar()}</time>
-          <i className='close' onClick={this.onClose}>+</i>
-          <p className="message-bar__msg">Oliver has texted you about interview
-          <span className="view-task">view task</span></p>
-        </article>}
+        {messageBody}
       </div>
     )
   }
