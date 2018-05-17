@@ -1,5 +1,5 @@
 import React from "react";
-import MessageBar from "./messagebar";
+import MessageBar from "./message_bar";
 import NotificationSummary from "./notification_summary";
 
 const SAMPLE_DATA = [{
@@ -23,7 +23,7 @@ const SAMPLE_MESSAGES = [ {
 ]
 
 const Notification = () => (
-  <div className="notification-continer">
+  <div className="notification-container">
    <NotificationSummary data={SAMPLE_DATA} />
    <MessageBar messages={SAMPLE_MESSAGES} />
   </div>

@@ -23,9 +23,12 @@
   outline: none;
 }
 
-.notification-continer {
-  wdth: 100%;
+.notification-container {
+  width: 100%;
   margin: 0.5rem;
+  position: absolute;
+  z-index: 100;
+  background-color: #f4f4f4;
 }
 
 .notification-summary {
@@ -41,8 +44,8 @@
  &__content:first-child {
     width: inherit;
     border-top: 3px solid gray;
-    border-bottom: 1px solid lightgray ;
-    padding: 1rem;
+    border-bottom: 1px solid lightgray;
+    padding: 0.5rem;
 }
 
  &__time {
@@ -107,4 +110,21 @@ i.close {
   &__time {
     font-weight: bold;
   }
+}
+
+.user-input-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 1;
+  padding: 1rem;
+  position: relative;
+}
+
+.user-input-form {
+ label,textarea,input {
+   align-items: center;
+   margin: 0.5rem;
+ }
 }

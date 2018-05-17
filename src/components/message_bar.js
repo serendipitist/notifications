@@ -9,8 +9,9 @@ class MessageBar extends Component {
     }
     this.onClose = this.onClose.bind(this);
   }
-  onClose() {
+  onClose(event) {
     this.setState({ closeIcon: false });
+    event.preventDefault();
   }
 
   render() {
