@@ -16,9 +16,9 @@ class NotifyApp extends Component {
   }
 
   handleClick() {
-    this.setState({
-      active: !this.state.active
-    });
+    this.setState(prevState => ({
+      active: !prevState.active
+    }));
   }
 
   handleSubmit(event) {
