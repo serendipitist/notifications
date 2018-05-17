@@ -28,7 +28,7 @@
   margin: 0.5rem;
   position: absolute;
   z-index: 100;
-  background-color: #f4f4f4;
+  background-color: white;
 }
 
 .notification-summary {
@@ -50,6 +50,7 @@
 
  &__time {
   text-align: left;
+  padding: 1rem;
  }
 
  &__items {

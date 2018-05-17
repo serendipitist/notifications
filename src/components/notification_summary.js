@@ -6,7 +6,10 @@ class NotificationSummary extends Component {
     super();
   }
   render() {
-    const data = this.props.data;
+    const {data , newMessages} = this.props;
+    if(newMessages.length > 0) {
+      data[2].count = data[2].count + 1;
+    }
     const children = data.map((item) => <li key={item.type} className="notification-summary__item">
     <span className="total-messages">{item.count}</span>
     {item.type}

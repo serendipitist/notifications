@@ -22,10 +22,10 @@ const SAMPLE_MESSAGES = [ {
   }
 ]
 
-const Notification = () => (
+const Notification = (props) => (
   <div className="notification-container">
-   <NotificationSummary data={SAMPLE_DATA} />
-   <MessageBar messages={SAMPLE_MESSAGES} />
+   <NotificationSummary data={SAMPLE_DATA} newMessages={props.messages} />
+   <MessageBar messages={SAMPLE_MESSAGES} newMessages={props.messages} />
   </div>
 )
 

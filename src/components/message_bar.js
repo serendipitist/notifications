@@ -15,7 +15,10 @@ class MessageBar extends Component {
   }
 
   render() {
-    const messages = this.props.messages;
+    const {messages , newMessages} = this.props;
+    if(newMessages.length > 0) {
+      messages.unshift({"time": Math.round(new Date().getTime()/1000), message : newMessages});
+    }
     const messageBody = messages.map((item) =>
     <article className="message-bar__content" key={item.message}>
         <time className="message-bar__time">{moment.unix(item.time).calendar()}</time>
