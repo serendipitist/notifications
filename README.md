@@ -1,4 +1,4 @@
-#Notification Component built  utilizing node.js + express.js and react.js 
+#Notification Component built  utilizing express.js,socket.io and for front-end react.js
 socket.io for client communication
 
 ##To start the app
